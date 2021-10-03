@@ -34,5 +34,6 @@ class MemberTest {
         Long saveId = memberService.join(member);
         //then
         Assertions.assertThat(member).isEqualTo(memberRepository.findById(saveId));
+        System.out.println("젠킨스 깃허브 연결 테스트");
     }
 }

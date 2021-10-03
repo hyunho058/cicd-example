@@ -29,10 +29,10 @@ class MemberTest {
         ApplicationContext ac = new AnnotationConfigApplicationContext(CicdApplication.class);
         //give
         System.out.println("memberService = " + ac.getBean(MemberService.class));
-        Member domain = Member.createMember("memberA", 21);
-//        //when
-        Long saveId = memberService.join(domain);
+        Member member = Member.createMember("memberA", 21);
+        //when
+        Long saveId = memberService.join(member);
         //then
-        Assertions.assertThat(domain).isEqualTo(memberRepository.findById(saveId));
+        Assertions.assertThat(member).isEqualTo(memberRepository.findById(saveId));
     }
 }
